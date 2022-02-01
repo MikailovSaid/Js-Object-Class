@@ -1,9 +1,9 @@
-class OwnArray {
+class MyArray {
     constructor() {
         this.argument = arguments;
     }
 
-    ownFind(condition) {
+    findItem(condition) {
         for (const item of this.argument) {
             if (condition(item)) {
                 return item;
@@ -11,16 +11,16 @@ class OwnArray {
         }
     }
 
-    ownPush(newItem) {
+    pushItem(newItem) {
         return (this.argument[this.argument.length++] = newItem);
     }
 }
 
-let arr = new OwnArray(10, 11, 12, 13, 14);
+let arr = new MyArray(10, 11, 12, 13, 14);
 console.log(arr);
-console.log(arr.ownPush(15));
+console.log(arr.pushItem(15));
 
-function checkNum(number) {
+function checkNumber(number) {
     return number > 13;
 }
-console.log(arr.ownFind(checkNum));
+console.log(arr.findItem(checkNumber));
